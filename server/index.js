@@ -1,5 +1,8 @@
 const express = require('express');
+// const cors = require('cors');
+
 let app = express();
+
 
 app.use(express.static(__dirname + '/../client/dist'));
 
