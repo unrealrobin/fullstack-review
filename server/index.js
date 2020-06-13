@@ -52,7 +52,8 @@ app.post('/repos', function (req, res) {
 
     })
     .then(response => {
-      res.send(response)
+      res.sendStatus(200);
+      res.send(response);
     })
     .catch(err => console.log('err getting repos'))
   //return a list of repos for the users
@@ -71,6 +72,7 @@ app.get('/repos', function (req, res) {
   db.Repo.find((err, data) => {
     if(err){
       res.sendStatus(404);
+      console.log('Could not get Data from DB!')
     }else{
       res.send(data)
     }
