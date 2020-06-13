@@ -44,12 +44,18 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>Github Fetcher</h1>
-      <RepoList repos={this.state.repos}/>
-      <Search onSearch={this.search.bind(this)}/>
-    </div>)
-  }
+    return (
+      <div>
+        <h1>Github Fetcher</h1>
+        <div className="repoContainer">
+          <RepoList repos={this.state.repos}/>
+        </div>
+        <div className="formContainer">
+          <Search onSearch={this.search.bind(this)}/>
+        </div>
+      </div>
+
+    )}
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));

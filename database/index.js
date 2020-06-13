@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/fetcher', {useNewUrlParser: true, useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/fetcher', {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', function(){
   console.log('Database Connected')
