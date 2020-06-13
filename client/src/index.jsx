@@ -29,6 +29,20 @@ class App extends React.Component {
     })
   }
 
+  componentDidMount(){
+    //send get request to the db
+    $.ajax({
+      url: '/repos',
+      type: 'GET',
+      success: (data) => {
+        this.setState({repos: data });
+      } ,
+      error: (err) => {
+        console.log('Err completing GET request!')
+      }
+    })
+  }
+
   render () {
     return (<div>
       <h1>Github Fetcher</h1>
