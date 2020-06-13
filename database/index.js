@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/fetcher', {useNewUrlParse: true, useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/fetcher', {useNewUrlParser: true, useMongoClient: true});
 
 mongoose.connection.once('open', function(){
   console.log('Database Connected')
@@ -13,7 +13,7 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:' 
 
 
 // const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://robin:<password>@cluster0-5k4vt.mongodb.net/<dbname>?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://robin:BrgKjhMgsRkfydDg@cluster0-5k4vt.mongodb.net/cloudFetcher?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
 // client.connect(err => {
 //   const collection = client.db("test").collection("devices");
