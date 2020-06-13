@@ -5,7 +5,7 @@ const RepoList = (props) => (
   <div>
     {
       props.repos.map((repo, index) => {
-        return <Repo repoInfo={repo} key={index} />
+        return <Repo repoInfo={repo} key={index} count={index} />
       })
     }
   </div>

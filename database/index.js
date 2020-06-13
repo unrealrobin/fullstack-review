@@ -12,10 +12,13 @@ let repoSchema = mongoose.Schema({
   repoId: {
     type: Number,
     required: true,
+    unique: true
     },
   userId: Number,
   username: String,
-  url: String,
+  url: {
+    type: String,
+    unique: true},
   private: Boolean
 }, {collection: 'allRepos'});
 

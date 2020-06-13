@@ -74,15 +74,22 @@ app.get('/repos', function (req, res) {
     }else{
       res.send(data)
     }
-  }).limit(5);
-
+  }).limit(25).sort({"repoId" : 1});
+  //
   // console.log(top25);
   // res.json(top25);
 
 
 });
 
-let port = 1128;
+
+
+let port = process.env.PORT;
+
+if (port == null || port == "") {
+  port = 1128;
+}
+
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
